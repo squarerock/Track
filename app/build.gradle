@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "23.0.2"
+    defaultConfig {
+        applicationId "squarerock.track"
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+ext{
+    allprojects{
+        appCompatVersion = "24.0.0"
+        constrainLayoutVersion = "1.0.0-alpha3"
+        cupboardVersion = "2.1.4"
+        segmentedGroupVersion = "1.0.6"
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+
+    compile "com.android.support:appcompat-v7:${appCompatVersion}"
+    compile "com.android.support:recyclerview-v7:${appCompatVersion}"
+    compile "com.android.support:design:${appCompatVersion}"
+    compile "com.android.support.constraint:constraint-layout:${constrainLayoutVersion}"
+    compile "nl.qbusict:cupboard:${cupboardVersion}"
+    compile "info.hoang8f:android-segmented:${segmentedGroupVersion}"
+}

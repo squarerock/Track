@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_todo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.TodoActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:id="@+id/toolbar_activity"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_todo"
+        app:layout_constraintTop_toTopOf="@+id/activity_todo"
+        app:layout_constraintRight_toRightOf="@+id/activity_todo" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:clickable="true"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_add_black_36dp"
+        android:id="@+id/floatingActionButton"
+        android:layout_below="@+id/recycler_view"
+        android:layout_alignRight="@+id/recycler_view"
+        android:layout_alignEnd="@+id/recycler_view"
+        app:layout_constraintRight_toRightOf="@+id/activity_todo"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_todo"
+        android:layout_marginBottom="16dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="378dp"
+        android:layout_height="494dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_todo"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_activity"
+        android:layout_marginTop="8dp"
+        app:layout_constraintRight_toRightOf="@+id/activity_todo"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp" />
+</android.support.constraint.ConstraintLayout>
