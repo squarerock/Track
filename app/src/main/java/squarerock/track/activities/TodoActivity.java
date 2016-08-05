@@ -43,14 +43,14 @@ public class TodoActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate: ");
         setContentView(R.layout.activity_todo);
+        initViews();
+        initDB();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         Log.d(TAG, "onResume: ");
-        initViews();
-        initDB();
         updateListOfTodos();
     }
 
